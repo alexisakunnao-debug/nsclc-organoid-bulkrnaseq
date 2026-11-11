@@ -1,26 +1,26 @@
 # Validation status
 
-Recorded on 10 November 2026, America/Toronto.
+Last updated 10 November 2026 (America/Toronto).
 
-| Component | Current evidence |
+| Component | What has been checked |
 |---|---|
-| Public run discovery | ENA metadata retrieved and joined to the saved GEO source |
-| Cohort manifest | Nine organoid runs, three in the pilot; all paired and linked by experiment and BioSample |
+| Public run discovery | ENA metadata retrieved and matched to the saved GEO records |
+| Cohort manifest | Nine organoid runs, three in the pilot; paired reads linked by experiment and BioSample |
 | Compressed FASTQ inventory | 35.55 GiB for the cohort; 7.15 GiB for the pilot |
-| Reference pinning | GENCODE 47 URLs and provider checksums verified from the release checksum list |
+| Reference files | GENCODE 47 URLs and provider checksums checked against the release checksum list |
 | Bash entry points | Syntax checks passed |
-| Python tests | 31 tests passed with Python 3.14.7 with the local Python interpreter |
-| Stage handoffs and resume | Synthetic orchestration test passed with explicit external-tool stubs |
-| Conda environment solve | Pending on the target Linux system |
-| FastQC on study reads | Pending |
-| Full reference index | Pending |
-| Salmon on study reads | Pending |
-| MultiQC on study outputs | Pending |
-| Slurm submission and resource measurements | Pending |
+| Python tests | 31 tests passed with the local Python 3.14.7 interpreter |
+| Stage handoffs and resume | Synthetic orchestration test passed using stand-in external tools |
+| Conda environment solve | Still needs to be checked on the target Linux system |
+| FastQC on study reads | Not run |
+| Salmon reference index | Not built |
+| Salmon on study reads | Not run |
+| MultiQC on study outputs | Not run |
+| Slurm submission and resource measurements | Not run |
 
-The tests validate workflow contracts and failure handling. They do not establish that the external tools have run successfully on this study or that the Slurm profile matches a particular cluster.
+The tests check workflow behavior and error handling. They do not show that FastQC or Salmon has run successfully on this study, or that the Slurm resource requests fit a particular cluster.
 
-## Reproduce local checks
+## Re-running the local checks
 
 ```bash
 python3 -B -m unittest discover -s tests -v
@@ -28,15 +28,15 @@ bash -n run.sh submit-slurm.sh workflow/worker.sbatch
 bash run.sh preflight
 ```
 
-The standard-library tests need no bioinformatics executables and make no external network requests. Their small synthetic files are temporary and never enter study reports.
+The standard-library tests do not need bioinformatics tools or network access. They use small synthetic files that are temporary and are not included in the study reports.
 
 ## First HPC run
 
 1. Solve and activate the pinned environment on the target Linux system.
-2. Run the tests and require the expected tool versions in preflight.
-3. Confirm shared storage capacity, scratch retention, scheduler account and resource limits.
-4. Submit the three-run pilot, then inspect all FastQC modules, inferred library types and mapping flags.
-5. Review `sample_qc.tsv`, the abundance matrices, MultiQC and stage completion manifests.
-6. Record elapsed time, peak memory, software builds and any interpretation decisions before expanding the cohort.
+2. Run the tests and check the expected tool versions with preflight.
+3. Confirm shared storage, scratch retention, scheduler account and resource limits.
+4. Submit the three-sample pilot. Review all FastQC modules, inferred library types and mapping flags.
+5. Check `sample_qc.tsv`, abundance tables, MultiQC and stage completion manifests.
+6. Record elapsed time, peak memory, software builds and any decisions before running the rest of the cohort.
 
-Keep this page in sync with actual completed runs. Add measured results only after reviewing the generated reports.
+I will update this page after the real pilot run. Any measured results should come from reviewed output reports.
