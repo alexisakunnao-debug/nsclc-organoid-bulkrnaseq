@@ -1,0 +1,15 @@
+{
+  "release": "GENCODE 47",
+  "assembly": "GRCh38 primary assembly",
+  "transcripts": {
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_47/gencode.v47.transcripts.fa.gz",
+    "md5": "9c3ce49c6b6f13f3e4f4deb53ca80bf9"
+  },
+  "genome": {
+    "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_47/GRCh38.primary_assembly.genome.fa.gz",
+    "md5": "0c33152bea6f09b89fb5e3f89558771e"
+  },
+  "index_k": 31,
+  "salmon_version": "1.10.2",
+  "checksum_source": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_47/MD5SUMS"
+}

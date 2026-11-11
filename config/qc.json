@@ -1,0 +1,9 @@
+{
+  "mapping_rate_review_below_percent": 70.0,
+  "minimum_fragments_review_below": 1000000,
+  "gc_bias_correction": true,
+  "sequence_bias_correction": true,
+  "bootstrap_replicates": 30,
+  "library_type": "A",
+  "threshold_note": "Project review thresholds. Flags require interpretation and do not automatically exclude samples."
+}
