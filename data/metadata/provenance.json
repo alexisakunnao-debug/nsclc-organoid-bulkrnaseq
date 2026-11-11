@@ -1,0 +1,14 @@
+{
+  "retrieved_utc": "2026-11-11T02:16:40.525327+00:00",
+  "geo_source": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE119nnn/GSE119004/soft/GSE119004_family.soft.gz",
+  "ena_source": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=SRP158722&result=read_run&fields=run_accession,experiment_accession,sample_accession,study_accession,library_layout,library_strategy,scientific_name,fastq_ftp,fastq_bytes,fastq_md5&format=tsv",
+  "soft_sha256": "66fb8deec1ccb53d4ad76c9cf1fb8716719be3ab3ec3d10f0af76462875524a1",
+  "ena_sha256": "cface085db32b381e258d60e8d4ef0336574798460d0dde4b8f3365dae62aed9",
+  "organoid_runs": 9,
+  "pilot_geo_accessions": [
+    "GSM3356477",
+    "GSM4063806",
+    "GSM4063812"
+  ],
+  "selection": "Documented GEO sample type, joined by SRX and confirmed BioSample"
+}
