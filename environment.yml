@@ -1,0 +1,9 @@
+name: nsclc-rnaseq
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11.11
+  - fastqc=0.12.1
+  - multiqc=1.25.1
+  - salmon=1.10.2

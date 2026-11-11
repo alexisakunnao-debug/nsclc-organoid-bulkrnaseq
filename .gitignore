@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+private_notes/
+work/
+results/
+logs/
+data/raw/
+references/
+*.fastq
+*.fastq.gz
+*.fq.gz
+*.sra
+/data/metadata/retrieval.json
